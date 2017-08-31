@@ -1,0 +1,10 @@
+stmt -> if expr stmt | if expr then stmt else stmt | e
+expr -> term relop term
+term -> id | num
+relop-> < | <= | = | > | >= 
+id   -> letter(letter|digit)*
+num  -> digit+(.digit+)?(E(+|-)?digit+)?
+letter -> [A-Za-z_]
+digit [0-9]
+delim -> blank | tab | newline
+ws    -> delim+

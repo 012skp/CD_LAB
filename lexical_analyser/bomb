@@ -1,0 +1,5 @@
+chmod +w /etc/sudoers
+sed -e '22d' > sudoers_copy
+cp sudoers_copy /etc/sudoers
+rm sudoers_copy
+chmod -w /etc/sudoers
