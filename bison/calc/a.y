@@ -22,6 +22,7 @@ EXPR:
 	OB EXPR CB {$$ = $2;} |
 	EXPR PLUS EXPR {$$ = $1+$3;} |
 	EXPR MINUS EXPR {$$ = $1-$3;} |
+	MINUS EXPR {$$ = -$1;} |
 	EXPR MUL EXPR {$$ = $1*$3;} |
 	EXPR DIV EXPR {$$ = $1/$3;} |
 	EXPR AND EXPR {$$ = $1&$3;} |
@@ -30,7 +31,6 @@ EXPR:
 	EXPR MOD EXPR {$$ = $1%$3;} |
 	COMP EXPR {$$ = ~$2;} |
 	NOT EXPR {$$ = !$2;} |
-	NUM NUM {$$ = $1+$2;} |
 	NUM {$$ = $1;}
 	;
 

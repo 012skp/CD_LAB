@@ -3,8 +3,8 @@
 extern int yylval;
 %}
 
-WS [ \t\N]
-INT [+-]?[1-9][0-9]*
+WS [ \t\n]
+INT [1-9][0-9]*
 
 %%
 
@@ -23,6 +23,7 @@ INT [+-]?[1-9][0-9]*
 "^" return(XOR);
 {INT} {
 	yylval = atoi(yytext);
+	printf("passing %d\n",yylval);
 	return(NUM);
 	}
 
