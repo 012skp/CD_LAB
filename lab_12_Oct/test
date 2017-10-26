@@ -19,16 +19,12 @@ A:
 B:
 	p = Rx
 	p = p - 10
-	JMLT ELSE
 	Rx = p + 2
 	Call C
 	q = Rz + 1
 	Rz = q
 	RET
-ELSE:
-	q = p - 2
-	Rz = q
-	RET
+
 C:
 	z = Rx
 	z = z + 1
