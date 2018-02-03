@@ -1,0 +1,38 @@
+Main:
+	x = 10
+	y = 20
+	Rx = x
+	Ry = y
+	Call A
+	z = Rz
+	print z
+	STOP
+A:
+	a = Rx + 1
+	b = Ry + 1
+	Rx = a
+	Call B
+	c = Rz
+	c = b + c
+	Rz = c
+	RET
+B:
+	p = Rx
+	p = p - 20
+	JMLT ELSE
+	Rx = p + 2
+	Call C
+	q = Rz + 1
+	Rz = q
+	RET
+_ELSE:
+	q = p -2
+	Rz = q
+	RET
+	
+C:
+	z = Rx
+	z = z + 1
+	Rz = z
+	RET
+	
